@@ -16,4 +16,10 @@
 
 ---
 
-3 -
+3 - Add library for writing styled in javascript:
+
+```sh
+yarn add polished
+```
+
+We gonna use it to make a color brighter/darken, etc.
