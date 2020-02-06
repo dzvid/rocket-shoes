@@ -13,3 +13,5 @@
 - Create the pages folder: src/pages
 
 - Create the file that will contain the routes component: src/routes.js
+
+---
