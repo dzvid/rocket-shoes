@@ -37,3 +37,9 @@ To execute the fake API run the following command:
 ```sh
 yarn json-server server.json -p 3333 -w
 ```
+
+---
+
+5 Loading API products:
+
+- To format the product price create the file src/utils/format.js

@@ -1,90 +1,57 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { MdAddShoppingCart } from 'react-icons/md';
 
 import { ProductList } from './styles';
 
-import tenis from '../../assets/images/tenis.jpg';
+import api from '../../services/api';
+import { formatPrice } from '../../utils/format';
 
-export default function Home() {
-  return (
-    <ProductList>
-      <li>
-        <img src={tenis} alt="Tênis" />
-        <strong>Tênis dahora</strong>
-        <span>R$ 89,00</span>
+export default class Home extends Component {
+  constructor(props) {
+    super(props);
 
-        <button>
-          <div>
-            <MdAddShoppingCart />3
-          </div>
-          <span>ADICIONAR AO CARRINHO</span>
-        </button>
-      </li>
+    this.state = {
+      products: [],
+    };
+  }
 
-      <li>
-        <img src={tenis} alt="Tênis" />
-        <strong>Tênis dahora</strong>
-        <span>R$ 89,00</span>
+  async componentDidMount() {
+    try {
+      const response = await api.get('/products');
 
-        <button>
-          <div>
-            <MdAddShoppingCart />3
-          </div>
-          <span>ADICIONAR AO CARRINHO</span>
-        </button>
-      </li>
+      // Format currency
+      const data = response.data.map(product => ({
+        ...product,
+        priceFormatted: formatPrice(product.price),
+      }));
 
-      <li>
-        <img src={tenis} alt="Tênis" />
-        <strong>Tênis dahora</strong>
-        <span>R$ 89,00</span>
+      this.setState({
+        products: data,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
-        <button>
-          <div>
-            <MdAddShoppingCart />3
-          </div>
-          <span>ADICIONAR AO CARRINHO</span>
-        </button>
-      </li>
+  render() {
+    const { products } = this.state;
+    return (
+      <ProductList>
+        {products.map(product => (
+          <li key={product.id}>
+            <img src={product.image} alt={product.title} />
+            <strong>{product.title}</strong>
+            <span>{product.priceFormatted}</span>
 
-      <li>
-        <img src={tenis} alt="Tênis" />
-        <strong>Tênis dahora</strong>
-        <span>R$ 89,00</span>
-
-        <button>
-          <div>
-            <MdAddShoppingCart />3
-          </div>
-          <span>ADICIONAR AO CARRINHO</span>
-        </button>
-      </li>
-
-      <li>
-        <img src={tenis} alt="Tênis" />
-        <strong>Tênis dahora</strong>
-        <span>R$ 89,00</span>
-
-        <button>
-          <div>
-            <MdAddShoppingCart />3
-          </div>
-          <span>ADICIONAR AO CARRINHO</span>
-        </button>
-      </li>
-
-      <li>
-        <img src={tenis} alt="Tênis" />
-        <strong>Tênis dahora</strong>
-        <span>R$ 89,00</span>
-
-        <button>
-          <div>
-            <MdAddShoppingCart />3
-          </div>
-          <span>ADICIONAR AO CARRINHO</span>
-        </button>
-      </li>
-    </ProductList>
-  );
+            <button type="button">
+              <div>
+                <MdAddShoppingCart />3
+              </div>
+              <span>ADICIONAR AO CARRINHO</span>
+            </button>
+          </li>
+        ))}
+      </ProductList>
+    );
+  }
 }
