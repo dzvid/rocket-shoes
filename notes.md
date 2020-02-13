@@ -110,3 +110,12 @@ yarn add reactotron-react-js reactotron-redux
 ---
 
 9 List items in the cart component:
+
+---
+
+10 Duplicated product:
+
+- Install immer (Immer is a tiny package that allows you to work with immutable state in a more convenient way. It is based on the copy-on-write mechanism. The basic idea is that you will apply all your changes to a temporary draftState, which is a proxy of the currentState. Once all your mutations are completed, Immer will produce the nextState based on the mutations to the draft state. This means that you can interact with your data by simply modifying it while keeping all the benefits of immutable data.)
+  ```sh
+  yarn add immer
+  ```
