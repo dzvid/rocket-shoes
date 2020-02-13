@@ -90,6 +90,8 @@ but how to retrieve this data in another component?
   get the current global state and then return the respective reducer property.
   The reducer property is received as a prop in the component.
 
+  - Another option is to create a method to map state to props;
+
   **When the reducer updates the state, guess what? it triggers a render to all the components that have the connect method (Observer pattern), that will update the values in the respectives components that depend on the respective state.**
 
 ---
@@ -104,3 +106,7 @@ yarn add reactotron-react-js reactotron-redux
 
 - Integrates reactotron to redux in the store index.js file, then import the
   reactotron config in the App.js before the store configuration;
+
+---
+
+9 List items in the cart component:
