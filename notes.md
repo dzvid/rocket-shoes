@@ -129,4 +129,7 @@ yarn add reactotron-react-js reactotron-redux
 12 Refactor Actions:
 
 - Create an actions.js file for each reducer;
--
+
+---
+
+13 Update quantity
