@@ -119,3 +119,14 @@ yarn add reactotron-react-js reactotron-redux
   ```sh
   yarn add immer
   ```
+
+---
+
+11 remove product from Cart
+
+---
+
+12 Refactor Actions:
+
+- Create an actions.js file for each reducer;
+-
