@@ -70,6 +70,10 @@ yarn json-server server.json -p 3333 -w
 
 7 Add item to cart
 
+**Redux gist**:
+
+> The whole state of your app is stored in an object tree inside a single store. The only way to change the state tree is to emit an action, an object describing what happened. To specify how the actions transform the state tree, you write pure reducers
+
 - When the user click in add to cart, the object is passed to the cart reducer.
   For this the `connect()` method from react-redux will be used. The method allows the component to connect to the redux store state (remember we added the Provider component in the App as a wrapper of the application components, the provider makes the connect method actually works).
   Each component connected to redux has a `dispatch` prop, this method allows to send the actions to the reducer/redux (When a dispatch method is executed, all the reducers listen to all the actions. They proccess the action according to the action type supported).
@@ -87,3 +91,16 @@ but how to retrieve this data in another component?
   The reducer property is received as a prop in the component.
 
   **When the reducer updates the state, guess what? it triggers a render to all the components that have the connect method (Observer pattern), that will update the values in the respectives components that depend on the respective state.**
+
+---
+
+8 Configure Reactotron + Redux (for debug):
+
+- Install Reactron and its react integration module:
+
+```sh
+yarn add reactotron-react-js reactotron-redux
+```
+
+- Integrates reactotron to redux in the store index.js file, then import the
+  reactotron config in the App.js before the store configuration;
