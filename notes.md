@@ -182,3 +182,20 @@ yarn add react-toastify
 - Import the React Toastify styling in the global.js styles file.
 
 ---
+
+17 Navigation with Redux Saga:
+
+- Sometimes its necessary to let the user navigate or redirect him to a page after
+  realizing some data processing (like for example after a saga's middleware execution),
+  but can not be possible to use this.props.history.push(/page), so its necessary
+  to navigate with sagas.
+
+- Install the lib history to control the history API of the browser:
+
+  ```sh
+  yarn add history
+  ```
+
+- Create a file `src/services/history.js` to contain the history configuration;
+- Import the history in the App.js and change the BrowserRouter component to Router.
+  Then pass the history property to it.

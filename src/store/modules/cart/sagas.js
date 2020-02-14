@@ -3,6 +3,7 @@ import { all, call, put, select, takeLatest } from 'redux-saga/effects';
 import { toast } from 'react-toastify';
 
 import api from '../../../services/api';
+import history from '../../../services/history';
 import { formatPrice } from '../../../utils/format';
 import { addToCartSuccess, updateAmountSuccess } from './actions';
 
@@ -27,6 +28,8 @@ function* addToCart({ id }) {
 
   if (productExists) {
     yield put(updateAmountSuccess(id, amount));
+
+    toast.success('Produto adicionado ao carrinho!');
   } else {
     const response = yield call(api.get, `/products/${id}`);
 
@@ -38,6 +41,11 @@ function* addToCart({ id }) {
 
     // put is how saga 'Dispatchs' an action
     yield put(addToCartSuccess(data));
+
+    toast.success('Produto adicionado ao carrinho!');
+
+    // User navigation
+    history.push('/cart');
   }
 }
 
