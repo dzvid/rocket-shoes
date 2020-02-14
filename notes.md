@@ -167,3 +167,18 @@ yarn add reactotron-react-js reactotron-redux
   ```sh
   yarn add reactotron-redux-saga
   ```
+
+---
+
+16 React Toastify:
+
+- Install the lib:
+
+```sh
+yarn add react-toastify
+```
+
+- Import the lib in the App.js file.
+- Import the React Toastify styling in the global.js styles file.
+
+---
