@@ -199,3 +199,4 @@ yarn add react-toastify
 - Create a file `src/services/history.js` to contain the history configuration;
 - Import the history in the App.js and change the BrowserRouter component to Router.
   Then pass the history property to it.
+- Import the history in the respective file/module is the sagas file
