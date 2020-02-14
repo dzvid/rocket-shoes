@@ -3,7 +3,7 @@ import produce from 'immer';
 // Cart reducer, returns the cart's initial state (empty initial state in this case)
 export default function cart(state = [], action) {
   switch (action.type) {
-    case '@cart/ADD':
+    case '@cart/ADD_SUCCESS':
       return produce(state, draftState => {
         const productIndex = draftState.findIndex(
           p => p.id === action.product.id

@@ -133,3 +133,28 @@ yarn add reactotron-react-js reactotron-redux
 ---
 
 13 Update quantity
+
+---
+
+14 Redux Saga configuration:
+
+- In this class we learned how to use middlewares in Redux.
+  Middlewares are usually intercepters, Redux Saga intercepts actions
+  and generates a side effect (like an async call to API, retrieve data from
+  storage/DB, etc).
+  An use case example is when it is necessary to retrieve additional information
+  of a product from the API.
+
+- Install Redud Saga:
+
+  ```sh
+  yarn add redux-saga
+  ```
+
+- Create a `sagas.js` file for each reducer/module, i.e, for the the cart module
+  create the file `src/store/modules/cart/sagas.js`, it will contain the generators
+  that will be processed by sagas;
+
+- Create a file `src/store/modules/rootSaga.js` that will handle all the sagas middlewares
+  (like the rootReducer.js). It is necessary to import and apply the sagas middlewares
+  in the Redux store (`src/store/index.js`).
