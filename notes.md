@@ -158,3 +158,12 @@ yarn add reactotron-react-js reactotron-redux
 - Create a file `src/store/modules/rootSaga.js` that will handle all the sagas middlewares
   (like the rootReducer.js). It is necessary to import and apply the sagas middlewares
   in the Redux store (`src/store/index.js`).
+
+---
+
+15 Reactotron + Saga:
+
+- Install and configure the reactotron plugin for Redux Saga, it helps for debugging:
+  ```sh
+  yarn add reactotron-redux-saga
+  ```
