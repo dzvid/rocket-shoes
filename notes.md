@@ -200,3 +200,10 @@ yarn add react-toastify
 - Import the history in the App.js and change the BrowserRouter component to Router.
   Then pass the history property to it.
 - Import the history in the respective file/module is the sagas file
+
+---
+
+18 React Hooks and Redux:
+
+- Now instead of using the `connect()`, we gonna use the `useSelector()` method
+  And now instead of using `dispath()`, we gonna use `useDispatch` method.
