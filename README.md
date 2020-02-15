@@ -67,7 +67,7 @@
 
 [![Rocketshoes][product-screenshot-home]](https://tukno-rocket-shoes.netlify.com/)
 
-[![Rocketshoes][product-screenshot-cart]](https://tukno-rocket-shoes.netlify.com/cart)
+[![Rocketshoes][product-screenshot-cart]](https://tukno-rocket-shoes.netlify.com/)
 
 This application allows a user to:
 
